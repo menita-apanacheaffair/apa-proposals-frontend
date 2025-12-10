@@ -896,6 +896,11 @@ a:hover {
     font-weight: 600;
 }
 
+.feature-arrow::after {
+    content: '→';
+    font-size: 0.9rem;
+}
+
 .feature-text {
     flex: 1;
 }
