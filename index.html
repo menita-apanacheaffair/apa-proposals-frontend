@@ -48,10 +48,9 @@
     <section class="hero" id="welcome">
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="hero-title-line">YOUR VISION,</span><br>
-                <span class="hero-title-line">PERFECTLY REALIZED</span>
+                <span class="hero-title-line">HARLEEN & SHIVRAJ</span><br>
             </h1>
-            <p class="hero-subtitle">A bespoke proposal for [CLIENT'S NAME]</p>
+            <p class="hero-subtitle">YOUR VISION, PERFECTLY REALIZED</p>
             <div class="hero-buttons">
                 <a href="#services-packages" class="btn btn-primary">Explore Your Custom Proposal</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -105,13 +104,14 @@
                      <!-- Client Testimonials Video Section -->
                      <div class="about-testimonials">
                         <h3 class="about-testimonials-heading">Client Testimonials</h3>
-                        <div class="about-testimonials-video-placeholder">
-                            <!-- Replace this placeholder with the real <video> or <iframe> embed when available -->
-                            <div class="video-frame">
-                                <p class="video-placeholder-text">
-                                    Testimonials video coming soon
-                                </p>
-                            </div>
+                        <div class="testimonial-video-wrapper">
+                            <iframe
+                                src="https://www.youtube.com/embed/HsT24C7aCZk"
+                                title="Client Testimonials – A Panache Affair"
+                                frameborder="0"
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                            </iframe>
                         </div>
                      </div>
             </div>
@@ -224,10 +224,10 @@
     <section class="section section-packages" id="services-packages">
         <div class="container">
             <div class="section-label">03 — SERVICES & INVESTMENT</div>
-            <h2 class="section-title">Planning Packages</h2>
+            <h2 class="section-title">Planning Package</h2>
             <div class="section-divider"></div>
             <p class="section-intro">
-                Choose from two signature planning packages, each offering different levels of support and involvement. Whether you desire comprehensive end-to-end planning or expert guidance on key decisions, we tailor our services to your unique vision.
+                Our comprehensive planning package offers complete end-to-end support and involvement, delivering a fully managed white-glove experience tailored to your unique vision.
             </p>
 
             <!-- Summary Cards Grid -->
@@ -241,6 +241,14 @@
                     <div class="package-card-content">
                         <p class="package-label">Package One</p>
                         <h3 class="package-summary-name">The Whole Nine Yards</h3>
+                        
+                        <div class="proposal-details">
+                            <p class="proposal-detail-line"><strong>Potential Dates:</strong> Sept / Oct 2027</p>
+                            <p class="proposal-detail-line"><strong>Events:</strong> Anand Karaj & Reception</p>
+                            <p class="proposal-detail-line"><strong>Location:</strong> Southern California</p>
+                            <p class="proposal-detail-line"><strong>Guest Count:</strong> 350 guests</p>
+                        </div>
+                        
                         <p class="package-summary-desc">Complete end-to-end planning for those who desire a fully managed, white-glove experience from the first consultation to the final toast.</p>
                         
                         <ul class="package-features">
@@ -262,13 +270,14 @@
                             </li>
                         </ul>
                         
-                        <p class="package-summary-investment">Investment: Custom Quote</p>
+                        <p class="package-summary-investment">Investment: $40,000</p>
                         
                         <button class="btn-view-details" data-panel="whole-nine">View Full Details</button>
                     </div>
                 </div>
 
                 <!-- Package 2 Summary -->
+                <!--
                 <div class="package-summary-card" data-package="lean-on-me">
                     <div class="package-image-wrapper">
                         <img src="images/packages/partial.jpg" alt="Flexible wedding planning support" class="package-image" onerror="this.style.display='none';">
@@ -302,6 +311,7 @@
                         <button class="btn-view-details" data-panel="lean-on-me">View Full Details</button>
                     </div>
                 </div>
+                -->
 
             </div>
 
@@ -413,12 +423,33 @@
                             <span class="feature-check"></span>
                             <span class="feature-text">Supervision of proper breakdown</span>
                         </li>
+                        <li class="package-feature-item">
+                            <span class="feature-check"></span>
+                            <span class="feature-text">6 to 7 coordinators for main events</span>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="panel-section">
                     <h3>Travel & Accommodations</h3>
-                    <p>Travel and accommodation expenses will be incurred for any destination outside of Los Angeles County. The number of coordinators requiring travel will be determined 3 months before the first event date. For events outside Arizona or California, client covers all travel-related expenses for required in-person meetings.</p>
+                    <ul class="package-features">
+                        <li class="package-feature-item">
+                            <span class="feature-check"></span>
+                            <span class="feature-text">Travel and accommodation expenses will be incurred for any destination outside of Los Angeles County</span>
+                        </li>
+                        <li class="package-feature-item">
+                            <span class="feature-check"></span>
+                            <span class="feature-text">For events outside Arizona or California, client covers all travel-related expenses for required in-person meetings</span>
+                        </li>
+                        <li class="package-feature-item">
+                            <span class="feature-check"></span>
+                            <span class="feature-text">Accommodations required for a minimum of 2 nights; the number of coordinators requiring hotel stay will be determined 3 months prior to the first event date</span>
+                        </li>
+                        <li class="package-feature-item">
+                            <span class="feature-check"></span>
+                            <span class="feature-text">Final accommodations requirements (number of rooms and coordinators) will be confirmed 3 months prior to the first event date</span>
+                        </li>
+                    </ul>
                 </div>
 
                 <div class="panel-section panel-summary">
@@ -426,7 +457,7 @@
                     <div class="panel-summary-grid">
                         <div class="panel-summary-column">
                             <h4>Investment</h4>
-                            <p class="summary-highlight">Custom quote based on your event</p>
+                            <p class="summary-highlight">$40,000</p>
                             <p class="summary-subtext">Lead Planner: Shveta Dhillon Contact: <a href="tel:3236003234">(323) 600-3234</a></p>
                         </div>
                         <div class="panel-summary-column">
@@ -443,6 +474,7 @@
             </div>
 
             <!-- Content for "Lean on Me" -->
+            <!--
             <div class="panel-content" id="panel-lean-on-me">
                 <h2 class="panel-title">Lean on Me</h2>
                 <p class="panel-subtitle">Expert guidance on key decisions with comprehensive day-of coordination and support.</p>
@@ -548,6 +580,7 @@
                     <button class="btn-close-panel">Close</button>
                 </div>
             </div>
+            -->
 
         </div>
     </div>
