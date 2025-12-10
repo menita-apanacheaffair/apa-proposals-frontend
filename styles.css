@@ -1987,11 +1987,19 @@ a:hover {
         transform: translateX(-50%);
     }
     
+    .timeline::before {
+        display: none;
+    }
+    
     .timeline-step {
         flex-direction: column;
         align-items: center;
         gap: var(--spacing-md);
         margin-bottom: var(--spacing-xl);
+    }
+    
+    .timeline-marker::before {
+        display: none;
     }
     
     .timeline-marker {
