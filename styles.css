@@ -370,8 +370,8 @@ a:hover {
     background-image: 
         linear-gradient(
             to bottom,
-            rgba(53, 34, 8, 0.45),
-            rgba(132, 122, 115, 0.35)
+            rgba(53, 34, 8, 0.55),
+            rgba(53, 34, 8, 0.45)
         ),
         url('images/hero-background.jpg');
     background-size: cover;
@@ -391,13 +391,13 @@ a:hover {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 300;
     color: #ffffff;
     margin-bottom: var(--spacing-md);
     letter-spacing: -0.02em;
     line-height: 1.2;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-title-line {
@@ -407,10 +407,10 @@ a:hover {
 .hero-subtitle {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     font-weight: 300;
-    color: var(--color-lightest);
+    color: #ffffff;
     margin-bottom: var(--spacing-lg);
     font-style: italic;
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -590,40 +590,24 @@ a:hover {
     letter-spacing: 0.02em;
 }
 
-.about-testimonials-video-placeholder {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.video-frame {
+.testimonial-video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    background-color: var(--color-lightest);
+    max-width: 720px;
+    margin: 2rem auto 0;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
     border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.3s ease;
+    box-shadow: var(--shadow-md);
 }
 
-.video-frame:hover {
-    box-shadow: var(--shadow-hover);
-}
-
-.video-placeholder-text {
+.testimonial-video-wrapper iframe {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.95rem;
-    color: var(--color-dark);
-    font-style: italic;
-    margin: 0;
-    opacity: 0.6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 /* ========================================
@@ -767,9 +751,12 @@ a:hover {
 
 .package-summary-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     margin-top: var(--spacing-xl);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .package-summary-card {
@@ -830,13 +817,37 @@ a:hover {
 .package-summary-name {
     font-size: clamp(1.75rem, 3vw, 2.25rem);
     color: var(--color-darkest);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     font-weight: 400;
     font-family: var(--font-heading);
     line-height: 1.2;
     min-height: 2.7em;
     display: flex;
     align-items: flex-start;
+}
+
+.proposal-details {
+    background-color: rgba(215, 210, 206, 0.2);
+    border-left: 3px solid var(--color-accent);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: 0 0 var(--spacing-sm) 0;
+    border-radius: var(--radius-sm);
+}
+
+.proposal-detail-line {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-darkest);
+    margin-bottom: 0.25rem;
+}
+
+.proposal-detail-line:last-child {
+    margin-bottom: 0;
+}
+
+.proposal-detail-line strong {
+    font-weight: 600;
+    color: var(--color-darkest);
 }
 
 .package-summary-desc {
@@ -885,6 +896,11 @@ a:hover {
     font-weight: 600;
 }
 
+.feature-arrow::after {
+    content: '→';
+    font-size: 0.9rem;
+}
+
 .feature-text {
     flex: 1;
 }
@@ -914,7 +930,7 @@ a:hover {
 }
 
 .package-summary-investment {
-    font-size: 1.15rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--color-darkest);
     margin-top: auto;
@@ -1470,6 +1486,26 @@ a:hover {
 }
 
 /* ========================================
+   FADE IN ON SCROLL - WHY APA & ENHANCEMENTS
+   ======================================== */
+
+.why-card,
+.enhancement-row {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+.why-card.fade-in,
+.enhancement-row.fade-in {
+    opacity: 0;
+}
+
+.why-card.fade-in.visible,
+.enhancement-row.fade-in.visible {
+    opacity: 1;
+}
+
+/* ========================================
    TIMELINE SECTION
    ======================================== */
 
@@ -1522,9 +1558,14 @@ a:hover {
     left: 0;
     top: 44px;
     width: 2px;
-    height: calc(100% - 88px);
+    height: 0;
     background-color: var(--color-accent);
     z-index: 0;
+    transition: height 3s ease-out;
+}
+
+.timeline.draw-line::before {
+    height: calc(100% - 88px);
 }
 
 .timeline-step {
@@ -1976,6 +2017,10 @@ a:hover {
         transform: translateX(-50%);
     }
     
+    .timeline::before {
+        display: none;
+    }
+
     .timeline-step {
         flex-direction: column;
         align-items: center;
@@ -1983,6 +2028,10 @@ a:hover {
         margin-bottom: var(--spacing-xl);
     }
     
+    .timeline-marker::before {
+        display: none;
+    }
+
     .timeline-marker {
         width: 84px;
     }

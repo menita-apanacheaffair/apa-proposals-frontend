@@ -235,10 +235,36 @@ document.addEventListener('DOMContentLoaded', function() {
 // ========================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Add fade-in class to elements we want to animate
-    const animatedElements = document.querySelectorAll('.why-card, .package-card, .enhancement-row, .timeline-item');
-    
-    const observerOptions = {
+    // Fade in for Why APA and Enhancements
+    const whyCards = document.querySelectorAll('.why-card');
+    const enhancementRows = document.querySelectorAll('.enhancement-row');
+
+    // Add fade-in class to elements that should start hidden
+    whyCards.forEach(card => card.classList.add('fade-in'));
+    enhancementRows.forEach(row => row.classList.add('fade-in'));
+
+    const fadeObserverOptions = {
+        threshold: 0.2,
+        rootMargin: '0px'
+    };
+
+    const fadeObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, fadeObserverOptions);
+
+    // Observe Why APA cards and Enhancement rows
+    whyCards.forEach(card => fadeObserver.observe(card));
+    enhancementRows.forEach(row => fadeObserver.observe(row));
+
+    // Other animations (package-card, timeline-item)
+    const animatedElements = document.querySelectorAll('.package-card, .timeline-item');
+
+        const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
@@ -264,6 +290,24 @@ document.addEventListener('DOMContentLoaded', function() {
     animatedElements.forEach(element => {
         observer.observe(element);
     });
+
+    // Draw timeline vertical line on scroll
+    const timeline = document.querySelector('.timeline');
+    if (timeline) {
+        const timelineObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    timeline.classList.add('draw-line');
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px'
+        });
+
+        timelineObserver.observe(timeline);
+    }
 });
 
 // ========================================
