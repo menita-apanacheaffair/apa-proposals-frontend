@@ -862,7 +862,7 @@ a:hover {
 .package-features {
     list-style: none;
     padding: 0;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
     display: grid;
     gap: var(--spacing-sm);
 }
@@ -927,6 +927,51 @@ a:hover {
 .package-summary-highlights li:hover {
     background-color: rgba(215, 210, 206, 0.35);
     transform: translateX(3px);
+}
+
+.planner-photo-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: var(--spacing-md) auto 0.5rem;
+    border: 3px solid var(--color-accent);
+    background-color: var(--color-lightest);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.planner-name {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-darkest);
+    margin-bottom: var(--spacing-md);
+    width: 100%;
+    align-self: center;
+}
+
+.planner-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.planner-photo-wrapper .planner-photo-placeholder {
+    display: none;
+}
+
+.planner-photo-wrapper.placeholder .planner-photo-placeholder {
+    display: block;
+    font-size: 0.7rem;
+    color: var(--color-dark);
+    text-align: center;
+    padding: 0.5rem;
+    letter-spacing: 0.02em;
 }
 
 .package-summary-investment {
@@ -1178,9 +1223,7 @@ a:hover {
     color: var(--color-dark);
     font-size: 1.1rem;
     line-height: 1.7;
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-lg);
-    border-bottom: 2px solid var(--color-lightest);
+    margin-bottom: var(--spacing-md);
 }
 
 .panel-section {
@@ -1252,6 +1295,74 @@ a:hover {
 
 .summary-subtext a:hover {
     color: var(--color-accent);
+}
+
+/* Pricing Breakdown */
+.pricing-breakdown {
+    background-color: var(--color-lightest);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    border-top: 3px solid var(--color-accent);
+    margin-top: var(--spacing-lg);
+}
+
+.pricing-breakdown h3 {
+    border-bottom: 1px solid var(--color-accent);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.pricing-breakdown-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.pricing-line-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid rgba(168, 146, 131, 0.2);
+}
+
+.pricing-event {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-darkest);
+    font-weight: 400;
+}
+
+.pricing-amount {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-darkest);
+}
+
+.pricing-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--color-darkest);
+}
+
+.pricing-total-label {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-darkest);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.pricing-total-amount {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-darkest);
 }
 
 /* Close button wrapper and styling */
