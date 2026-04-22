@@ -373,7 +373,7 @@ a:hover {
             rgba(53, 34, 8, 0.55),
             rgba(53, 34, 8, 0.45)
         ),
-        url('images/hero-background3.jpeg');
+        url('images/hero-corporate.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -751,10 +751,10 @@ a:hover {
 
 .package-summary-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--spacing-xl);
     margin-top: var(--spacing-xl);
-    max-width: 1400px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -1365,6 +1365,44 @@ a:hover {
     color: var(--color-darkest);
 }
 
+/* Portfolio Link */
+.panel-portfolio-link {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-md);
+    background-color: rgba(211, 192, 178, 0.1);
+}
+
+.portfolio-label {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.btn-portfolio-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-darkest);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-darkest);
+    padding-bottom: 2px;
+    transition: var(--transition-smooth);
+}
+
+.btn-portfolio-link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
 /* Close button wrapper and styling */
 .panel-close-wrapper {
     margin-top: var(--spacing-xl);
@@ -1867,9 +1905,12 @@ a:hover {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 768px) {
